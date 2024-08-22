@@ -1,4 +1,4 @@
-Creating a README for your Rock Paper Scissors game is a great way to showcase your project on GitHub. Here's a template you can use and customize according to your project details:
+
 
 ---
 
