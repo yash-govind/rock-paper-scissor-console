@@ -1,6 +1,6 @@
+
 playerScore = 0;
 computerScore = 0;
-
 //get  random computer choice  choice
 let getCompChoice = () => {
     let choice = Math.floor(Math.random() * 3); //get 3 random values from 1 to 3
@@ -20,6 +20,7 @@ let getCompChoice = () => {
 //test for above function.:  console.log(getCompChoice());
 //get User choice from rock,paper and scissor
 let getPlayerChoice = () => {
+    const prompt =require ('prompt-sync')();
     let choice = parseInt(prompt(("Enter your choice (0,1,2): "))); //input
     if (choice === 0) {
         return "rock";
