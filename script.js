@@ -17,61 +17,72 @@ let getCompChoice = () => {
         return "INVALID CHOICE";
     }
 };
-//test for above function.:  console.log(getCompChoice());
-//get User choice from rock,paper and scissor
-let getPlayerChoice = () => {
-    const prompt =require ('prompt-sync')();
-    let choice = parseInt(prompt(("Enter your choice (0,1,2): "))); //input
-    if (choice === 0) {
-        return "rock";
-    }
-    else if (choice === 1) {
-        return "paper";
-    }
-    else if (choice === 2) {
-        return "scissor";
-    }
-    else {
-        return "INVALID CHOICE";
-    }
-};
-//  test for above function :  console.log(getPlayerChoice()); //
 
 //logic for rock paper scissor.
 
 //function for player wins.
 let playerWin = (computerChoice, playerChoice) => {
     if (computerChoice === "scissor" && playerChoice === "rock" || computerChoice === "paper" && playerChoice === "scissor" || computerChoice === "rock" && playerChoice === "paper") {
-        console.log("Player Wins ");
         return true;
     }
     return false;
 };
 //function for game round.
 let gameRound = (computerChoice, playerChoice) => {
-    if (playerWin(computerChoice, playerChoice) == true) {
+    if (playerWin(computerChoice, playerChoice) === true) {
         playerScore++;
+        displayResultText("PLAYER WINS THE ROUND ")
     }
     else if (computerChoice === playerChoice) {
-        console.log("ITS A TIE ");
+        displayResultText("ITS A TIE ");
 
     }
     else {
-        console.log("COMPUTER WINS  ");
         computerScore++;
+        displayResultText("COMPUTER WINS  ");
+        
     }
+    updateScore();
 };
+//dom.
+const resultText = document.querySelector('#result-text');
+let displayResultText = (message)=>{
+    resultText.innerHTML = `<h2>${message}</h2>`
+}
 
-//function to play the game 5 times.
-let playGame = () => {
-    for (let i = 0; i < 5; i++) {
-        const CompChoice = getCompChoice();
-        const PlayerChoice = getPlayerChoice();
-        gameRound(CompChoice, PlayerChoice);
-    }
-};
 
-playGame();
+//score updation via dom and text display  to show the score for each round 
+let updateScore = ()=>{
+   document.querySelector('#player-score').innerHTML = playerScore;
+   document.querySelector('#computer-score').innerHTML = computerScore;
+   //first to reach 5 points , wins the game .
+   if (playerScore === 5) {
+    displayResultText("Player Wins the Game!");
+    disableButtons();
+} else if (computerScore === 5) {
+    displayResultText("Computer Wins the Game!");
+    disableButtons();
+}
+}
 
-console.log("Here are the Scores of Player : ", playerScore);
-console.log("Here are the Scores of Computer  ", computerScore);
+// to disable buttons after the match has been won.
+let disableButtons = ()=>{
+    document.querySelectorAll('button').forEach(button => {
+        button.disabled()=true;
+    });
+}
+
+//dom and events to select the r,p,s buttons on click ;
+
+document.querySelectorAll('button').forEach(button=>{
+    button.addEventListener('click',()=>playGame(button.id))
+})
+
+
+// to play the game ,get computer choice,get player choice and 
+
+let playGame = (playerChoice) =>{
+  let computerChoice = getCompChoice();
+  gameRound(computerChoice,playerChoice);
+  updateScore();
+}

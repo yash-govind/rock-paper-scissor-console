@@ -6,8 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RockPaperScissor</title>
 </head>
+<style>
 
-<body>
+#game{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 300px;
+}
+button{
+    padding: 50px;
+    border: 5px solid burlywood;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+}
+#results{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+</style>
+<body style="background-color: #212121; color:aliceblue">
+    <div id ="game">
+        <button id ="rock">ROCK</button>
+    <button id ="scissor">SCISSOR</button>
+    <button id ="paper">PAPER</button>
+    </div>
+    
+    <div id  = "results">
+        <p id="result-text">Let's Play!</p>
+        <p>Player Score: <span id="player-score">0</span></p>
+        <p>Computer Score: <span id="computer-score">0</span></p>
+    </div>
    <script src="/script.js "></script>
 </body>
 
