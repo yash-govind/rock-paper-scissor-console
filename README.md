@@ -51,6 +51,10 @@ To get a copy of this project up and running on your local machine, follow these
 4. The game will display the computer's choice and announce the winner of the round.
 5. Play as many rounds as you like!
 
+
+## EDIT : ADDED A UI FUNCTIONALITY 
+
+
 ## Technologies Used
 
 - **JavaScript**: The core programming language used to create the game logic.
