@@ -7,6 +7,8 @@
   </head>
 
   <body style="background-color: #212121; color: aliceblue">
+    <div id="cat" class="random-cat-container"></div>
+
     <div id="game">
       <button id="rock">ROCK</button>
       <button id="scissor">SCISSOR</button>
@@ -22,13 +24,13 @@
 </html>
 
 <script src="/script.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 
 <style>
   #game {
     display: flex;
     gap: 30px;
     justify-content: center;
-    margin-top: 300px;
   }
   button {
     padding: 50px;
@@ -40,5 +42,24 @@
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-bottom: 200px;
+  }
+
+  .random-cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .cat-image {
+    width: 256px;
+    height: 256px;
+  }
+
+  .cat-title {
+    font-size: 24px;
   }
 </style>

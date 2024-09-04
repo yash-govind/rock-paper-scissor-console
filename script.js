@@ -86,3 +86,21 @@ let playGame = (playerChoice) =>{
   gameRound(computerChoice,playerChoice);
   updateScore();
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const apiCall = axios.get("https://api.thecatapi.com/v1/images/search");
+
+    const callback = (res) => {
+        var img = res.data[0].url;
+        document.getElementById("cat").innerHTML = `
+        <p class="cat-title">Here's a Random Cat for you</p>
+        <img class="cat-image" src="${img}" alt="cat" >
+        `;
+    };
+
+    apiCall.then(callback);
+});
+
+
+
