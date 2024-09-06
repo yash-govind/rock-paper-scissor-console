@@ -1,21 +1,15 @@
 
+
+
+
 playerScore = 0;
 computerScore = 0;
 //get  random computer choice  choice
 let getCompChoice = () => {
-    let choice = Math.floor(Math.random() * 3); //get 3 random values from 1 to 3
-    if (choice === 0) {
-        return "rock";
-    }
-    else if (choice === 1) {
-        return "paper";
-    }
-    else if (choice === 2) {
-        return "scissor";
-    }
-    else {
-        return "INVALID CHOICE";
-    }
+    //get 3 random values from 1 to 3
+    const computerChoiceArr = ["rock","paper","scissor"];
+    let getChoice = computerChoiceArr[Math.floor(Math.random() * computerChoiceArr.length)];
+    return getChoice;
 };
 
 //logic for rock paper scissor.
@@ -82,10 +76,14 @@ document.querySelectorAll('button').forEach(button=>{
 // to play the game ,get computer choice,get player choice and 
 
 let playGame = (playerChoice) =>{
+   document.querySelector('#player-choice').innerHTML = playerChoice;
   let computerChoice = getCompChoice();
+  
+document.querySelector('#computer-choice ').innerHTML = computerChoice;
   gameRound(computerChoice,playerChoice);
   updateScore();
 }
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

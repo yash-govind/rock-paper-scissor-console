@@ -7,19 +7,23 @@
   </head>
 
   <body style="background-color: #212121; color: aliceblue">
+    
     <div id="cat" class="random-cat-container"></div>
-
+    <h1>PLEASE CHOOSE A CHOICE : </h1>
+  
     <div id="game">
       <button id="rock">ROCK</button>
       <button id="scissor">SCISSOR</button>
       <button id="paper">PAPER</button>
     </div>
-
     <div id="results">
-      <p id="result-text">Let's Play!</p>
-      <p>Player Score: <span id="player-score">0</span></p>
-      <p>Computer Score: <span id="computer-score">0</span></p>
+      <p id="result-text"></p>
+       <p>Player Choice : <div id = "player-choice"></div ></p>
+       <p>Computer Choice : <div  id ="computer-choice"></div ></p>
+      <p>Player Score: <div  id="player-score">0</div ></p>
+      <p>Computer Score: <div id="computer-score">0</div></p>
     </div>
+    
   </body>
 </html>
 
@@ -42,7 +46,13 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 200px;
+    margin-top: 100px;
+    font-size: large;
+    font-family: sans-serif ;
+  }
+  #player-score , #computer-score{
+    display: flex;
+    align-items: center;
   }
 
   .random-cat-container {
@@ -62,4 +72,15 @@
   .cat-title {
     font-size: 24px;
   }
+  h1{
+    display: flex;
+    justify-content: center;
+  }
+  #result-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
 </style>
