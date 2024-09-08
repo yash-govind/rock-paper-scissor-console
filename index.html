@@ -1,30 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RockPaperScissor</title>
-  </head>
 
-  <body style="background-color: #212121; color: aliceblue">
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RockPaperScissor</title>
+</head>
+
+<body style="background-color: #212121; color: aliceblue">
+  <div class="top-container">
     <div id="cat" class="random-cat-container"></div>
-    <h1>PLEASE CHOOSE A CHOICE : </h1>
-  
-    <div id="game">
-      <button id="rock">ROCK</button>
-      <button id="scissor">SCISSOR</button>
-      <button id="paper">PAPER</button>
+    <div>
+
+      <p>Player Score:
+      <div id="player-score">0</div>
+      </p>
+      <p>Computer Score:
+      <div id="computer-score">0</div>
+      </p>
     </div>
-    <div id="results">
-      <p id="result-text"></p>
-       <p>Player Choice : <div id = "player-choice"></div ></p>
-       <p>Computer Choice : <div  id ="computer-choice"></div ></p>
-      <p>Player Score: <div  id="player-score">0</div ></p>
-      <p>Computer Score: <div id="computer-score">0</div></p>
-    </div>
-    
-  </body>
+  </div>
+
+  <h1>PLEASE CHOOSE A CHOICE : </h1>
+
+  <div id="game">
+    <button id="rock">ROCK</button>
+    <button id="scissor">SCISSOR</button>
+    <button id="paper">PAPER</button>
+  </div>
+  <div class="choice-row">
+    <p>Player Choice : </p>
+    <p id="player-choice"></p>
+  </div>
+
+  <div class="choice-row">
+    <p>Computer Choice : </p>
+    <p id="computer-choice"></p>
+  </div>
+
+  <div id="results">
+    <p id="result-text"></p>
+  </div>
+
+</body>
+
 </html>
 
 <script src="/script.js "></script>
@@ -35,24 +54,23 @@
     display: flex;
     gap: 30px;
     justify-content: center;
+    margin-bottom: 32px;
   }
+
   button {
     padding: 50px;
     border: 5px solid burlywood;
     background-color: blanchedalmond;
     border-radius: 30px;
   }
+
   #results {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     gap: 30px;
-    margin-top: 100px;
     font-size: large;
-    font-family: sans-serif ;
-  }
-  #player-score , #computer-score{
-    display: flex;
-    align-items: center;
+    font-family: sans-serif;
   }
 
   .random-cat-container {
@@ -61,7 +79,6 @@
     align-items: center;
     margin-top: 36px;
     flex-direction: column;
-    margin-bottom: 100px;
   }
 
   .cat-image {
@@ -72,15 +89,33 @@
   .cat-title {
     font-size: 24px;
   }
-  h1{
+
+  h1 {
     display: flex;
     justify-content: center;
   }
-  #result-text{
+
+  #result-text {
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
+  .top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+    gap: 120px;
+    flex-direction: row;
+    margin-bottom: 100px;
+  }
+
+  .choice-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 32px;
+  }
 </style>
